@@ -3,14 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "reactstrap": "^5.0.0-beta"
+  },
+  "lint-staged": {
+    "gitDir": "./",
+    "linters": {
+      "src/**/*.{json,css,scss}": [
+        "prettier --write",
+        "git add"
+      ],
+      "src/**/*.{js,jsx}": [
+        "eslint --fix --max-warnings=0",
+        "git add"
+      ]
+    }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "1.10.2",
+    "eslint": "^4.17.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0"
   }
 }
